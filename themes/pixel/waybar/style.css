@@ -1,0 +1,56 @@
+@import "colors.css";
+
+* {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 13px;
+    border: none;
+}
+
+window#waybar {
+    background: @bg;
+    color: @fg;
+
+    border-radius: 18px;
+    padding: 12px;
+
+    border: 1px solid @accent-bg;
+}
+
+#custom-logo {
+    font-size: 24px;
+    padding: 16px 0 20px;
+    color: @accent;
+}
+
+#workspaces {
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+#workspaces button {
+    padding: 10px;
+    margin: 6px;
+    border-radius: 999px;
+
+    color: @text;
+}
+
+#workspaces button.active {
+    background: @accent;
+    color: @active-text;
+}
+
+#clock,
+#network,
+#pulseaudio,
+#battery {
+    padding: 10px 0;
+    margin: 4px 0;
+    min-width: 52px;
+
+    color: @fg;
+}
+
+#tray {
+    margin-top: 20px;
+}
