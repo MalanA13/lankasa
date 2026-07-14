@@ -20,6 +20,17 @@ log_error() {
     printf "\033[1;31m[ERROR]\033[0m %s\n" "$1"
 }
 
+load_theme() {
+    local theme="$1"
+
+    local manifest="$THEMES_DIR/$theme/theme.conf"
+
+    ensure_file "$manifest"
+
+    # shellcheck disable=SC1090
+    source "$manifest"
+}
+
 ensure_file() {
     if [[ ! -f "$1" ]]; then
         log_error "Missing file: $1"

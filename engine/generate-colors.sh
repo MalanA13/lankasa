@@ -16,7 +16,7 @@ MANIFEST="$THEME_DIR/theme.conf"
 ensure_dir "$THEME_DIR"
 ensure_file "$MANIFEST"
 
-source "$MANIFEST"
+load_theme "$THEME"
 
 OUTPUT="$ROOT_DIR/config/colors.css"
 

@@ -14,11 +14,7 @@ THEME_DIR="$THEMES_DIR/$THEME"
 
 ensure_dir "$THEME_DIR"
 
-MANIFEST="$THEME_DIR/theme.conf"
-
-ensure_file "$MANIFEST"
-source "$MANIFEST"
-
+load_theme "$THEME"
 log_info "Theme '$THEME' found."
 log_info "Manifest found."
 

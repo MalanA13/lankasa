@@ -21,7 +21,18 @@ case "$COMMAND" in
     reload)
         "$ENGINE_DIR/reload.sh"
         ;;
-
+    current)
+   	 "$ENGINE_DIR/current.sh"
+    	;;
+    list)
+    	"$ENGINE_DIR/list.sh"
+	;;
+    info)
+	"$ENGINE_DIR/info.sh" "$@"
+	;;
+    new)
+	"$ENGINE_DIR/new.sh" "$@"
+	;;
     *)
         cat <<EOF
 Lankasa CLI
@@ -30,6 +41,10 @@ Usage:
   lankasa apply <theme>
   lankasa validate <theme>
   lankasa reload
+  lankasa current
+  lankasa list
+  lankasa info <theme>
+  lankasa new <theme>
 EOF
         exit 1
         ;;
