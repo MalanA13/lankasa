@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+SCRIPT_PATH="$(readlink -f "${BASH_SOURCE[0]}")"
+ROOT_DIR="$(dirname "$(dirname "$SCRIPT_PATH")")"
+
+ENGINE_DIR="$ROOT_DIR/engine"
+
+COMMAND="$1"
+shift
+
+case "$COMMAND" in
+
+    apply)
+        "$ENGINE_DIR/apply.sh" "$@"
+        ;;
+
+    validate)
+        "$ENGINE_DIR/validate.sh" "$@"
+        ;;
+
+    reload)
+        "$ENGINE_DIR/reload.sh"
+        ;;
+
+    *)
+        cat <<EOF
+Lankasa CLI
+
+Usage:
+  lankasa apply <theme>
+  lankasa validate <theme>
+  lankasa reload
+EOF
+        exit 1
+        ;;
+esac
