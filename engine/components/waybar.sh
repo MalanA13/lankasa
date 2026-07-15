@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 apply_waybar() {
-    WAYBAR_SOURCE="$THEME_DIR/$waybar"
-    WAYBAR_TARGET="$HOME/.config/waybar/style.css"
 
-    ensure_file "$WAYBAR_SOURCE"
+    local WAYBAR_DIR="$THEME_DIR/$waybar"
 
-    ln -sfn "$WAYBAR_SOURCE" "$WAYBAR_TARGET"
+    ensure_dir "$WAYBAR_DIR"
+
+    link_file \
+        "$WAYBAR_DIR/style.css" \
+        "$HOME/.config/waybar/style.css"
 
     log_info "✓ Waybar linked"
 }

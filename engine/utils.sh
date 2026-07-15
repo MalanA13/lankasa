@@ -46,3 +46,31 @@ ensure_dir() {
         exit 1
     fi
 }
+
+link_file() {
+    local source="$1"
+    local target="$2"
+
+    ensure_file "$source"
+
+    mkdir -p "$(dirname "$target")"
+
+    ln -sfn "$source" "$target"
+}
+
+link_directory() {
+    local source="$1"
+    local target="$2"
+
+    ensure_dir "$source"
+
+    mkdir -p "$(dirname "$target")"
+
+    ln -sfn "$source" "$target"
+}
+link_component() {
+    local source="$1"
+    local target="$2"
+
+    link_file "$source" "$target"
+}

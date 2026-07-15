@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 
 apply_hyprlock() {
-    HYPRLOCK_SOURCE="$THEME_DIR/$hyprlock"
-    HYPRLOCK_TARGET="$HOME/.config/hypr/hyprlock.conf"
 
-    ensure_file "$HYPRLOCK_SOURCE"
+    local HYPR_DIR="$THEME_DIR/$hypr"
 
-    ln -sfn "$HYPRLOCK_SOURCE" "$HYPRLOCK_TARGET"
+    ensure_dir "$HYPR_DIR"
+
+    link_file \
+        "$HYPR_DIR/hyprlock.conf" \
+        "$HOME/.config/hypr/hyprlock.conf"
 
     log_info "✓ Hyprlock linked"
 }

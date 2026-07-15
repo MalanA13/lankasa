@@ -21,18 +21,27 @@ case "$COMMAND" in
     reload)
         "$ENGINE_DIR/reload.sh"
         ;;
+
     current)
-   	 "$ENGINE_DIR/current.sh"
-    	;;
+        "$ENGINE_DIR/current.sh"
+        ;;
+
     list)
-    	"$ENGINE_DIR/list.sh"
-	;;
+        "$ENGINE_DIR/list.sh"
+        ;;
+
     info)
-	"$ENGINE_DIR/info.sh" "$@"
-	;;
+        "$ENGINE_DIR/info.sh" "$@"
+        ;;
+
     new)
-	"$ENGINE_DIR/new.sh" "$@"
-	;;
+        "$ENGINE_DIR/new.sh" "$@"
+        ;;
+
+    health)
+        "$ENGINE_DIR/health.sh"
+        ;;
+
     *)
         cat <<EOF
 Lankasa CLI
@@ -45,6 +54,7 @@ Usage:
   lankasa list
   lankasa info <theme>
   lankasa new <theme>
+  lankasa health
 EOF
         exit 1
         ;;

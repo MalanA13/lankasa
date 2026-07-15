@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
 
 apply_wallpaper() {
-    WALLPAPER_SOURCE="$THEME_DIR/$wallpaper"
 
-    ensure_file "$WALLPAPER_SOURCE"
+    local wallpaper_source="$THEME_DIR/$wallpaper"
 
-    "$ROOT_DIR/scripts/wallpaper-apply.sh" "$WALLPAPER_SOURCE" || exit 1
+    ensure_file "$wallpaper_source"
+
+    "$ROOT_DIR/scripts/wallpaper-apply.sh" "$wallpaper_source" || exit 1
 
     log_info "✓ Wallpaper applied"
 }

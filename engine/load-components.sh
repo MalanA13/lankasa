@@ -4,21 +4,29 @@ SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 source "$SCRIPT_DIR/utils.sh"
 
-source "$SCRIPT_DIR/components/hyprlock.sh"
-source "$SCRIPT_DIR/components/waybar.sh"
-source "$SCRIPT_DIR/components/wallpaper.sh"
-
 THEME="$1"
 
 load_theme "$THEME"
 
 log_info "Loading theme components..."
 
-apply_hyprlock
-apply_waybar
-apply_wallpaper
+COMPONENTS=(
+    hyprlock
+    waybar
+    wallpaper
+    wofi
+    kitty
+    swaync
+)
 
-log_info "• Wofi (pending)"
+for component in "${COMPONENTS[@]}"; do
+
+    source "$SCRIPT_DIR/components/$component.sh"
+
+    "apply_$component"
+
+done
+
 log_info "• Notifications (pending)"
 
 log_info "Components loaded."
