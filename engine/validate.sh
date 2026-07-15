@@ -10,11 +10,8 @@ if [[ -z "$THEME" ]]; then
     exit 1
 fi
 
-THEME_DIR="$THEMES_DIR/$THEME"
-
-ensure_dir "$THEME_DIR"
-
 load_theme "$THEME"
+
 log_info "Theme '$THEME' found."
 log_info "Manifest found."
 
@@ -24,4 +21,5 @@ ensure_file "$THEME_DIR/$waybar"
 ensure_file "$THEME_DIR/$hyprlock"
 
 log_info "Theme assets validated."
+
 exit 0

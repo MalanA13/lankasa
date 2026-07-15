@@ -20,5 +20,8 @@ log_info "Applying theme: $THEME"
 mkdir -p "$STATE_DIR"
 echo "$THEME" > "$CURRENT_THEME_FILE"
 
+"$SCRIPT_DIR/load-components.sh" "$THEME" || exit 1
+
 "$SCRIPT_DIR/reload.sh" || exit 1
+
 log_info "Theme applied successfully."

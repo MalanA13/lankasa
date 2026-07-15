@@ -23,8 +23,10 @@ log_error() {
 load_theme() {
     local theme="$1"
 
-    local manifest="$THEMES_DIR/$theme/theme.conf"
+    THEME_DIR="$THEMES_DIR/$theme"
+    ensure_dir "$THEME_DIR"
 
+    local manifest="$THEME_DIR/theme.conf"
     ensure_file "$manifest"
 
     # shellcheck disable=SC1090
