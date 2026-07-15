@@ -20,4 +20,6 @@ splash = false
 ipc = true
 EOF
 
+hyprctl hyprpaper wallpaper "eDP-1,$WALLPAPER,cover"
+
 exit 0
