@@ -1,10 +1,10 @@
 :root {
-  --cc-bg: rgba(46, 46, 46, 0.7);
-  --noti-border-color: rgba(255, 255, 255, 0.15);
-  --noti-bg: 48, 48, 48;
-  --noti-bg-alpha: 0.8;
+  --cc-bg: rgba(18, 24, 20, 0.38);
+  --noti-border-color: rgba(122, 174, 127, 0.18);
+  --noti-bg: 24, 34, 28;
+  --noti-bg-alpha: 0.72;
   --noti-bg-darker: rgb(38, 38, 38);
-  --noti-bg-hover: rgb(56, 56, 56);
+  --noti-bg-hover: rgba(42, 62, 48, 0.90);
   --noti-bg-focus: rgba(68, 68, 68, 0.6);
   --noti-close-bg: rgb(78, 78, 78);
   --noti-close-bg-hover: rgb(94, 94, 94);
@@ -15,9 +15,9 @@
   --notification-app-icon-size: calc(var(--notification-icon-size) / 3);
   --notification-group-icon-size: 32px;
   --border: 1px solid var(--noti-border-color);
-  --border-radius: 12px;
-  --notification-shadow: 0 0 0 1px rgba(0, 0, 0, 0.3),
-    0 1px 3px 1px rgba(0, 0, 0, 0.7), 0 2px 6px 2px rgba(0, 0, 0, 0.3);
+  --border-radius: 22px;
+  --notification-shadow:
+    0 12px 36px rgba(0,0,0,0.28);
   --font-size-body: 15px;
   --font-size-summary: 16px;
   /* Deprecated variables (because of their typos). Keeeping them around for backwards compatibility. */
@@ -29,19 +29,19 @@
 
 /* Fallback for older CSS themes */
 /* Fallback for older CSS themes */
-@define-color cc-bg rgba(46, 46, 46, 0.7);
-@define-color noti-border-color rgba(255, 255, 255, 0.15);
-@define-color noti-bg rgba(48, 48, 48, 0.8);
-@define-color noti-bg-opaque rgb(48, 48, 48);
+@define-color cc-bg rgba(18,24,20,0.38);
+@define-color noti-border-color rgba(122,174,127,0.18);
+@define-color noti-bg rgba(24,34,28,0.72);
+@define-color noti-bg-opaque rgb(24, 34, 28);
 @define-color noti-bg-darker rgb(38, 38, 38);
-@define-color noti-bg-hover rgb(56, 56, 56);
+@define-color noti-bg-hover rgba(42,62,48,0.90);
 @define-color noti-bg-hover-opaque rgb(56, 56, 56);
 @define-color noti-bg-focus rgba(68, 68, 68, 0.6);
 @define-color noti-close-bg rgba(255, 255, 255, 0.1);
 @define-color noti-close-bg-hover rgba(255, 255, 255, 0.15);
 @define-color text-color rgb(255, 255, 255);
 @define-color text-color-disabled rgb(150, 150, 150);
-@define-color bg-selected rgb(0, 128, 255);
+@define-color bg-selected rgb(122,174,127);
 notificationwindow, blankwindow {
   background: transparent;
 }
@@ -78,16 +78,17 @@ notificationwindow, blankwindow {
 }
 
 .notification-row .notification-background {
-  padding: 6px 12px;
+  padding: 14px 18px;
 }
 
 .notification-row .notification-background .notification {
   /* The actual notification */
   border-radius: var(--border-radius);
-  border: var(--border);
+  border: 1px solid rgba(255,255,255,.06);
   padding: 0;
   transition: var(--hover-tranistion);
-  background: rgba(var(--noti-bg), var(--noti-bg-alpha));
+  background: rgba(var(--noti-bg),0.78);
+  box-shadow: var(--notification-shadow);
 }
 
 .notification-row .notification-background .notification.low {
@@ -104,7 +105,7 @@ notificationwindow, blankwindow {
 
 .notification-row .notification-background .notification .notification-default-action {
   /* The large action that also displays the notification summary and body */
-  padding: 4px;
+  padding: 12px;
   margin: 0;
   box-shadow: none;
   background: transparent;
@@ -116,7 +117,7 @@ notificationwindow, blankwindow {
 
 .notification-row .notification-background .notification .notification-default-action:hover {
   -gtk-icon-filter: none;
-  background: var(--noti-bg-hover);
+  background: rgba(80,120,90,.18);
 }
 
 .notification-row .notification-background .notification .notification-default-action:not(:only-child) {
@@ -319,11 +320,13 @@ notificationwindow, blankwindow {
 
 .control-center {
   /* The Control Center which contains the old notifications + widgets */
-  background: var(--cc-bg);
-  color: var(--text-color);
-  border-radius: var(--border-radius);
+    background: rgba(18,24,20,0.40);
+    padding: 18px;
+    border-radius: 26px;
+    border: 1px solid rgba(255,255,255,.08);
+    color: var(--text-color);
+    min-width: 420px;
 }
-
 .control-center .control-center-list-placeholder {
   /* The placeholder when there are no notifications */
   opacity: 0.5;
@@ -363,15 +366,25 @@ notificationwindow, blankwindow {
 
 /*** Widgets ***/
 .widget {
-  margin: 8px;
-  padding: 8px;
-  border-radius: var(--border-radius);
+
+    margin: 14px;
+
+    padding: 18px;
+
+    border-radius: 22px;
+
+    background: rgba(255,255,255,.05);
+
+    border: 1px solid rgba(255,255,255,.05);
+
 }
 
 /* Title widget */
 .widget-title > label {
+  letter-spacing: .4px;
   margin-right: 8px;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: bold;
 }
 
 .widget-title > button {
@@ -414,7 +427,8 @@ notificationwindow, blankwindow {
 }
 
 .widget-mpris .widget-mpris-player {
-  margin: 16px 20px;
+  margin: 22px;
+  background: rgba(255,255,255,.04);
   border-radius: var(--border-radius);
   box-shadow: var(--mpris-album-art-shadow);
 }

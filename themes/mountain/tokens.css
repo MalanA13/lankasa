@@ -1,0 +1,32 @@
+/*
+========================================
+Lankasa Theme Tokens
+Mountain
+========================================
+*/
+
+/* Colors */
+
+Accent      : #7aae7f
+Background  : rgba(18,24,20,0.38)
+Foreground  : #eef6ef
+Text         : #d7e6d8
+
+/* Material */
+
+Glass        : true
+Blur         : high
+
+/* Shape */
+
+Radius Small : 12
+Radius Medium: 18
+Radius Large : 28
+
+/* Shadow */
+
+Soft
+
+/* Animation */
+
+Smooth

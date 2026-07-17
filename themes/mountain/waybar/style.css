@@ -7,56 +7,116 @@
 }
 
 window#waybar {
-    background: rgba(18,24,20,0.30);
+    background: rgba(18,24,20,0.34);
+
     color: @fg;
 
-    border-radius: 28px;
+    border-radius: 30px;
+
     padding: 18px;
 
-    border: 1px solid rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.10);
+
+    box-shadow:
+        0 12px 40px rgba(0,0,0,.35),
+        inset 0 1px rgba(255,255,255,.05);
 }
 
 #custom-logo {
-    font-size: 24px;
-    padding: 16px 0 20px;
-    color: @accent;
-}
 
+    font-size: 34px;
+
+    color: #8fc98d;
+
+    padding-top: 26px;
+
+    padding-bottom: 32px;
+
+}
 #workspaces {
-    margin-top: 18px;
-    margin-bottom: 22px;
+    margin: 18px 0;
 }
 
 #workspaces button {
-    padding: 14px;
-    margin: 10px;
+
+    min-width: 14px;
+    min-height: 14px;
+
+    padding: 0;
+
+    margin: 12px 0;
+
     border-radius: 999px;
 
-    color: @text;
+    background: rgba(255,255,255,.08);
 
-    transition: all 180ms;
+    color: transparent;
+
+    transition: 180ms;
 }
 
 #workspaces button:hover {
-    background: rgba(122,174,127,0.15);
+
+    background: rgba(255,255,255,.22);
+
 }
 
 #workspaces button.active {
+
+    min-width: 30px;
+
     background: @accent;
-    color: @active-text;
+
+    box-shadow:
+        0 0 12px rgba(122,174,127,.45);
+
 }
 
-#clock,
+
+#clock {
+
+    font-size: 22px;
+
+    padding: 14px 0;
+
+}
 #network,
 #pulseaudio,
 #battery {
-    padding: 12px 0;
-    margin: 6px 0;
-    min-width: 56px;
+
+    font-size:18px;
+
+    padding:12px 0;
+
+    margin:10px 0;
+
+    color:@fg;
+
+}
+#custom-divider-top,
+#custom-divider-bottom {
+
+    color: rgba(255,255,255,.18);
+
+    font-size: 18px;
+
+    padding: 10px 0;
+
+}
+#custom-settings {
+
+    font-size: 20px;
 
     color: @fg;
-}
 
+    padding: 12px 0;
+
+}
+#custom-settings:hover {
+
+    color: @accent;
+
+}
 #tray {
-    margin-top: 32px;
+    margin-top: 40px;
 }

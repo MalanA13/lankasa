@@ -1,7 +1,7 @@
 show=drun
-prompt=Search...
-width=700
-height=420
+prompt=󰍉 Search apps...
+width=760
+height=520
 location=center
 allow_images=true
 insensitive=true

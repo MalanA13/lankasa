@@ -1,0 +1,35 @@
+/*
+========================================
+Lankasa Theme Tokens
+Pixel
+========================================
+*/
+
+/* Colors */
+
+Accent      : #89b4fa
+Background  : rgba(18,20,34,0.88)
+Foreground  : #ffffff
+Text         : #d9e5ff
+
+/* Material */
+
+Glass        : false
+
+Blur         : none
+
+/* Shape */
+
+Radius Small : 6
+
+Radius Medium: 10
+
+Radius Large : 14
+
+/* Shadow */
+
+None
+
+/* Animation */
+
+Fast

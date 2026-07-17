@@ -1,0 +1,65 @@
+{
+    "layer": "top",
+    "position": "left",
+
+    "width": 68,
+
+    "margin-top": 35,
+    "margin-left": 12,
+    "margin-bottom": 20,
+
+    "spacing": 14,
+
+    "modules-left": [
+       "custom/logo",
+       "hyprland/workspaces",
+       "custom/divider-top",
+       "clock",
+       "custom/divider-bottom",
+       "custom/settings"
+    ],
+
+    "modules-center": [],
+
+    "modules-right": [
+        "tray"
+    ],
+
+   "custom/logo": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "wofi --show drun"
+    },
+
+"custom/divider-top": {
+    "format": "─",
+    "tooltip": false
+},
+
+"custom/divider-bottom": {
+    "format": "─",
+    "tooltip": false
+},
+
+"custom/settings": {
+    "format": "󰒓",
+    "tooltip": "Settings",
+    "on-click": "swaync-client -t"
+},
+
+    "hyprland/workspaces": {
+     "format": "",
+     "all-outputs": true,
+     "active-only": false,
+     "persistent-workspaces": {
+         "*": 5
+     }
+    },
+    "clock": {
+	"format": "󰥔",
+	"tooltip-format": "<big>{:%H:%M}</big>\n{:%A, %d %B %Y}"
+    },
+    "tray": {
+        "spacing": 8
+    }
+}

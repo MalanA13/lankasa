@@ -2,9 +2,13 @@
 
 apply_waybar() {
 
-    local WAYBAR_DIR="$THEME_DIR/$waybar"
+    local WAYBAR_DIR="$THEME_DIR/waybar"
 
-    ensure_dir "$WAYBAR_DIR"
+    ensure_dir "$HOME/.config/waybar"
+
+    link_file \
+        "$WAYBAR_DIR/config.jsonc" \
+        "$HOME/.config/waybar/config.jsonc"
 
     link_file \
         "$WAYBAR_DIR/style.css" \
